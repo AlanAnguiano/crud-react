@@ -35,6 +35,7 @@ class Registros extends Component{
         isDisabled= (Nombre === "" || ciudad === "");
     }
     componentWillMount(){
+        console.log("will mount");
         this.setState({
             id: Number(this.props.registro.id),   
             Nombre: this.props.registro.Nombre,
@@ -44,7 +45,15 @@ class Registros extends Component{
     }
     delete(){
         var k = this.state.id;
+        console.log(k);
+        this.setState({
+            id: Number(this.props.registro.id),   
+            Nombre: this.props.registro.Nombre,
+            ciudad:this.props.registro.ciudad,
+            sexo:this.props.registro.sexo
+        })
         this.props.del(k);
+
     }
     closeEdit(){
         editar = false;

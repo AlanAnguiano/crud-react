@@ -37,7 +37,7 @@ class Add extends Component{
     sendData(){
         this.refs.nameIn.value ="";
         this.refs.cityIn.value ="";
-        this.refs.sexIn.value ="";
+        this.refs.sexIn.value ="M";
 
         this.setState({
             id: (this.state.id+1)
@@ -73,8 +73,8 @@ class Add extends Component{
                                     </div>
                                     <div className="form-group">
                                         <label>Sexo</label>
-                                        <select onChange={this.handleSex}defaultValue="M" ref="sexIn" className="custom-select">
-                                            <option value="M">Masculino</option>
+                                        <select onChange={this.handleSex} ref="sexIn" className="custom-select">
+                                            <option defaultValue="M">Masculino</option>
                                             <option value="F">Femenino</option>
                                         </select>
                                     </div>

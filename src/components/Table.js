@@ -12,17 +12,17 @@ class Table extends Component{
         };
         this.dibujaTabla = this.dibujaTabla.bind(this);
         this.deleteRow = this.deleteRow.bind(this);
-        this.edit = this.edit.bind(this);
     }
-    deleteRow= (key) =>{
+    deleteRow = (key) =>{
+        console.log(key);
         var newRegistros = this.state.registros.filter((el) =>{
+            console.log(el.id);
             return el.id !== key;
         })
+        console.log(newRegistros);
         this.setState({registros:newRegistros})
     }
-    
-    edit=(key) =>{
-    }
+
     dibujaTabla = (r)=>{
         if (r.length === 0) {
             return (
@@ -31,10 +31,9 @@ class Table extends Component{
                 </tr>
             )
         } else {
-
-            return r.map((row, i) => <Registros key={i} saveEdit={this.edit} del={this.deleteRow} registro={row} />);
+            console.log(r);
+            return r.map( (row, i) => <Registros key={row.id} del={this.deleteRow} registro={row} />)
         }
-        
     }
 
     componentWillReceiveProps(nextProps){
@@ -61,6 +60,7 @@ class Table extends Component{
         });
     }
     render(){
+        console.log("RENDERRRRR");
         return(
                 <table className="table table-striped ">
                     <thead className="bg-primary shadow-sm" >
