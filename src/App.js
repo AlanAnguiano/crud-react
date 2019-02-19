@@ -1,25 +1,42 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import Nav from './components/Nav';
+import Dashboard from './components/Dashboard';
+import Options from './components/Options';
 import './App.css';
 
+
+
 class App extends Component {
+  constructor(){
+    super();
+    this.state = {
+      registros: [],
+      del:false,
+    }
+    this.getDataForm = this.getDataForm.bind(this);
+    this.deleteData = this.deleteData.bind(this)
+  }
+  
+  regresaStateDash(state){
+    console.log(state);
+  }
+  
+  getDataForm(data){
+    this.setState(data)
+  }
+  deleteData(aceptar){
+    console.log("recibo: "+aceptar);
+    this.setState({del:aceptar});
+  }
   render() {
+
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        <Nav/>
+        <div className="mainCont container-fluid d-flex justify-content-center flex-column align-items-center">
+          <Dashboard add={this.state} delete={this.state.del} resetDel={this.deleteData} backState={this.regresaStateDash}/>
+          <Options getData={this.getDataForm} delete={this.deleteData}/>  
+        </div> 
       </div>
     );
   }
