@@ -74,7 +74,7 @@ class Add extends Component{
                                     <div className="form-group">
                                         <label>Sexo</label>
                                         <select onChange={this.handleSex} ref="sexIn" className="custom-select">
-                                            <option defaultValue="M">Masculino</option>
+                                            <option value="M">Masculino</option>
                                             <option value="F">Femenino</option>
                                         </select>
                                     </div>
