@@ -15,12 +15,10 @@ class Table extends Component{
         this.edit = this.edit.bind(this);
     }
     deleteRow= (key) =>{
-        console.log(key);
         var newRegistros = this.state.registros.filter((el) =>{
             return el.id !== key;
         })
         this.setState({registros:newRegistros})
-        console.log(newRegistros);
     }
     
     edit=(key) =>{

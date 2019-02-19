@@ -17,15 +17,10 @@ class App extends Component {
     this.deleteData = this.deleteData.bind(this)
   }
   
-  regresaStateDash(state){
-    console.log(state);
-  }
-  
   getDataForm(data){
     this.setState(data)
   }
   deleteData(aceptar){
-    console.log("recibo: "+aceptar);
     this.setState({del:aceptar});
   }
   render() {
@@ -34,7 +29,7 @@ class App extends Component {
       <div className="App">
         <Nav/>
         <div className="mainCont container-fluid d-flex justify-content-center flex-column align-items-center">
-          <Dashboard add={this.state} delete={this.state.del} resetDel={this.deleteData} backState={this.regresaStateDash}/>
+          <Dashboard add={this.state} delete={this.state.del} resetDel={this.deleteData}/>
           <Options getData={this.getDataForm} delete={this.deleteData}/>  
         </div> 
       </div>

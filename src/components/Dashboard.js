@@ -7,7 +7,7 @@ class Dashboard extends Component{
         return(
             
             <div className="dash d-flex flex-column col-12 col-md-10 px-0">
-                <Table addRow={this.props.add} reset={this.props.resetDel} deleteAll={this.props.delete} backState={this.props.backState}/>            
+                <Table addRow={this.props.add} reset={this.props.resetDel} deleteAll={this.props.delete}/>            
             </div>
         )
     }

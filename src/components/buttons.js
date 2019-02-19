@@ -139,7 +139,6 @@ class Edit extends Component{
     }
     handleName(e){
         this.setState({Nombre: e.target.value});
-        console.log(this.state.Nombre);
         this.validateIsDisabled();
     }
     handleCity(e){
@@ -159,8 +158,6 @@ class Edit extends Component{
         this.props.data(true);
     }
     render(){
-        console.log("render");
-        console.log(this.state.id);
         return(
             <div>
                 <button type="button" className="btn btn-info ml-3" onClick={this.editar.bind(this)}>Editar</button>

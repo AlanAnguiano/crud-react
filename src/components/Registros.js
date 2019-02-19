@@ -43,8 +43,7 @@ class Registros extends Component{
         })
     }
     delete(){
-        var k = this.props.registro.id;
-        console.log(k);
+        var k = this.state.id;
         this.props.del(k);
     }
     closeEdit(){
@@ -52,7 +51,6 @@ class Registros extends Component{
         this.forceUpdate();
     }
     editarData(){
-        console.log("entro");
         var refer = this.refs;
         this.setState({
             Nombre:refer.nameIn.value,
